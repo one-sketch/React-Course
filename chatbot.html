@@ -13,7 +13,7 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
 
-    <script type="text/babel">
+     <script type="text/babel">
        function ChatInput(){
           return (
             <>
@@ -50,8 +50,12 @@
             </div>
           )
        }
-       function ChatMessages(){
-          const chatMessage = [{
+       
+  
+       
+
+       function App(){
+         const chatMessages = [{
           message: 'hello chatbot',
           sender: 'user',
           id: "id1"
@@ -69,18 +73,11 @@
           id:'id4'
 
           }];
-          function sendMessage(){
-            chatMessages.push({
-              message: 'test',
-              sender: 'user',
-              id: crypto.randomUUID()
-            });
-            console.log(chatMessages)
-          }
-      return(
-          <>
-            <button onClick={sendMessage}>Send message</button>
-            {chatMessages.map((chatMessage) => {
+      
+          return(
+            <>
+              <ChatInput />
+             {chatMessages.map((chatMessage) => {
                       return(
                         <ChatMessage
                           message = {chatMessage.message}
@@ -88,17 +85,7 @@
                           key={chatMessage.id}
                       />
                   );
-                })}  
-          </> 
-        );
-       }
-
-       function App(){
-      
-          return(
-            <>
-              <ChatInput />
-              <chatMessages />
+                })}   
               
           </>
           );
