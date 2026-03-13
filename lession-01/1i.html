@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script src="https://unpkg.com/supersimpledev@8.6.4/dayjs.js"></script>
+
+    <script type="text/babel">
+      const time = (dayjs().format('HHH:mm:ss'))
+      const para = <p>Current time: {time}</p>
+        
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(para);
+    </script>
+  </body>
+</html>

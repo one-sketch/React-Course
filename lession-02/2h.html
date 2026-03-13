@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+
+    <script type="text/babel">
+        function ProductDetails({item, price, discountPrice}){
+            return (
+            <>
+               
+                    <p>{item}</p>
+                   { !discountPrice && (<p>Price: ${price}</p>)}
+                    { discountPrice && (<p><del>Price: ${price}</del></p>)}
+                 { discountPrice && (<p>Price: ${discountPrice}</p>)}
+
+                    
+                    <button>Add to Cart</button>
+                
+            </>
+            );
+        }
+       
+       function App(){
+          return(
+         <>
+          <ProductDetails 
+                item="Cotton Socks"
+                price ="10.90"
+                discountPrice ="5.45"
+            />
+           
+
+            <ProductDetails 
+                item="Tennis balls"
+                price ="6.00"
+            />
+           <ProductDetails 
+                item="Plain Shirt"
+                price ="7.99"
+            />
+
+
+        </>
+          );
+       }
+       
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
