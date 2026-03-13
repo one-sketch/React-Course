@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "simpledev": "^1.0.8",
+    "super": "^0.2.3"
+  }
+}
